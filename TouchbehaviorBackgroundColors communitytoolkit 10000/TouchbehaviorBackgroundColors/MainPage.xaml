@@ -6,11 +6,12 @@
              x:Class="TouchbehaviorBackgroundColors.MainPage">
 <ContentPage.Content>
     <StackLayout>
-        <VerticalStackLayout>
+        <VerticalStackLayout x:Name="TestStack">
             <VerticalStackLayout.Behaviors>
                 <toolkit:TouchBehavior
                     LongPressCommand="{Binding ToggleCommand}"
-                    Command="{Binding ToggleCommand}"/>
+                    Command="{Binding ToggleCommand}"
+                    BindingContext="{Binding Path=BindingContext, Source={x:Reference TestStack}, x:DataType=VerticalStackLayout}"/>
             </VerticalStackLayout.Behaviors>
             <Grid>
                 <Grid.RowDefinitions>
